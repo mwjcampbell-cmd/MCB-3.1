@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Matty Campbell Building</title>
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <h1>Matty Campbell Building</h1>
+    <div id="userArea">
+      <button id="loginBtn" class="btn">Sign in with Google</button>
+      <button id="logoutBtn" class="btn" style="display:none;">Sign out</button>
+      <span id="userName" class="muted"></span>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">☰ Menu</button>
+    <div class="dropdown-content">
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="work">Work Log</a>
+      <a href="#" data-page="sites">Job Sites</a>
+      <a href="#" data-page="tasks">Tasks</a>
+      <a href="#" data-page="materials">Materials</a>
+      <a href="#" data-page="events">Events</a>
+    </div>
+  </div>
+  <div style="padding:8px;text-align:center;">
+    <button id="syncBtn" class="btn">Sync</button>
+  </div>
+</header>
+
+<main>
+  <!-- Shown when not signed in -->
+  <section id="signedOut" class="active">
+    <div class="panel">
+      <h2>Please sign in</h2>
+      <p>To access your data, sign in with a Google account.</p>
+      <button id="loginBtn2" class="btn primary">Sign in with Google</button>
+    </div>
+  </section>
+
+  <!-- Shown when signed in -->
+  <section id="appContent" style="display:none">
+    <section id="home" class="active">
+      <h2>Dashboard</h2>
+      <h3>Upcoming Events</h3>
+      <div id="homeEvents"></div>
+      <h3>Recent Work Logs</h3>
+      <div id="homeLogs"></div>
+      <h3>Pending Materials</h3>
+      <div id="homeMaterials"></div>
+    </section>
+
+    <!-- Work Log -->
+    <section id="work">
+      <h2>Work Log</h2>
+      <div class="panel">
+        <label for="logDate">Date</label>
+        <input type="date" id="logDate" />
+        <label for="logSite">Job Site</label>
+        <select id="logSite"></select>
+        <label for="logNotes">Notes</label>
+        <textarea id="logNotes"></textarea>
+        <div class="row">
+          <button id="saveLogBtn" class="btn primary">Add Log</button>
+        </div>
+      </div>
+      <div id="logsList"></div>
+    </section>
+
+    <!-- Job Sites -->
+    <section id="sites">
+      <h2>Job Sites</h2>
+      <div class="panel">
+        <label for="siteName">Name</label>
+        <input id="siteName" />
+        <label for="siteAddress">Address</label>
+        <input id="siteAddress" />
+        <label for="siteContact">Contact</label>
+        <input id="siteContact" />
+        <label for="siteNotes">Notes</label>
+        <textarea id="siteNotes"></textarea>
+        <div class="row">
+          <button id="saveSiteBtn" class="btn primary">Add Site</button>
+        </div>
+      </div>
+      <div id="sitesList"></div>
+    </section>
+
+    <!-- Tasks -->
+    <section id="tasks">
+      <h2>Tasks</h2>
+      <div class="panel">
+        <label for="newTask">New Task</label>
+        <input id="newTask" />
+        <button id="addTaskBtn" class="btn primary">Add Task</button>
+      </div>
+      <div id="tasksList"></div>
+    </section>
+
+    <!-- Materials -->
+    <section id="materials">
+      <h2>Materials</h2>
+      <div class="panel">
+        <label for="materialName">Material</label>
+        <input id="materialName" />
+        <label for="materialQty">Quantity</label>
+        <input id="materialQty" type="number" />
+        <button id="addMaterialBtn" class="btn primary">Add Material</button>
+      </div>
+      <div id="materialsList"></div>
+    </section>
+
+    <!-- Events -->
+    <section id="events">
+      <h2>Events</h2>
+      <div class="panel">
+        <label for="eventTitle">Title</label>
+        <input id="eventTitle" />
+        <label for="eventDate">Date</label>
+        <input id="eventDate" type="date" />
+        <button id="addEventBtn" class="btn primary">Add Event</button>
+      </div>
+      <div id="eventsList"></div>
+    </section>
+  </section>
+</main>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
